@@ -115,16 +115,20 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #workspace-edit
+set $ws1 "Hub "
 set $ws2 "Terminals "
 set $ws3 "Browser "
 set $ws4 "Files "
+set $ws5 "Discord "
 
 #autostart start applications
 #bind program to workspace
+assign [class="(?i)unityhub"] $ws1
+for_window [class="(?i)unityhub"] focus
 assign [class="Xfce4-terminal"] $ws2
 for_window [class=Xfce4-terminal] focus
-assign [class="(?i)firefox"] $ws3
-for_window [class=(?i)firefox] focus
+assign [class="(?i)google-chrome"] $ws3
+for_window [class=(?i)google-chrome"] focus
 assign [class="Thunar"] $ws4
 for_window [class=Thunar] focus
 
@@ -168,14 +172,18 @@ bindsym --whole-window --border $mod+shift+button4 resize shrink width 5 px or 5
 bindsym --whole-window --border $mod+shift+button5 resize grow width 5 px or 5 ppt
 
 # switch to workspace
+bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
 
 # move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
