@@ -147,7 +147,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xset s 480 dpms 600 600 600
 
 # Desktop notifications
-exec --no-startup-id /usr/bin/dunst
+exec --no-startup-id /usr/bin/deadd-notification-center
 exec --no-startup-id git clone https://github.com/endeavouros-team/i3-EndeavourOS.git ~/.config/i3/original/
 
 # update notification should be set to tray and notification
